@@ -5,5 +5,7 @@ package com.vengat.tuts.algo.graph;
  */
 public class Graph {
 
-    public Graph(int v)
+    public Graph(int v){
+
+    }
 }

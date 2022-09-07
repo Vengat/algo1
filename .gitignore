@@ -1,2 +1,4 @@
+Tuts.iml
+\.idea/**/*.*
 *.iml
-\.idea.*
+target/**

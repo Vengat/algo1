@@ -13,9 +13,9 @@ public class MatrixChainOrder {
     public MatrixChainOrder(ArrayList<Matrix> matrices) {
         this.matrices= matrices;
         lengthOfMatrices = this.matrices.size();
-        n = lengthOfMatrices- 1;
+        this.n = lengthOfMatrices- 1;
         scalarMultiplications = new int[lengthOfMatrices][lengthOfMatrices];
-        partitionPoint = new int[lengthOfMatrices - 1][lengthOfMatrices - 1];
+        partitionPoint = new int[lengthOfMatrices][lengthOfMatrices];
     }
 
     public int getScalarMultiplicationsOfMatrices(int i, int k,int j) {
@@ -25,8 +25,8 @@ public class MatrixChainOrder {
         for(int l = i + 1; l <= k; l++) {
             currentMatrix = matrices.get(l);
             numberOfScalarMultiplications += prev.getRow() * prev.getCol() * currentMatrix.getCol();
-            prev= null;
             prev = new Matrix(prev.getRow(), currentMatrix.getCol());
+
         }
 
         currentMatrix = null;
@@ -35,7 +35,6 @@ public class MatrixChainOrder {
         for(int m = k + 2; m <= j; m++) {
             currentMatrix = matrices.get(m);
             numberOfScalarMultiplications += prev.getRow() * prev.getCol() * currentMatrix.getCol();
-            prev = null;
             prev = new Matrix(prev.getRow(), currentMatrix.getCol());
         }
 
@@ -48,10 +47,31 @@ public class MatrixChainOrder {
         return numberOfScalarMultiplications;
     }
 
-    public void OrderMatrix() {
+    public void printPartitionPoint() {
+        System.out.println("--------partition points-----------");
+        for(int i = 0; i < this.partitionPoint.length; i++) {
+            for(int j= 0; j < this.partitionPoint.length; j++) {
+                System.out.print(this.partitionPoint[i][j] + ", ");
+            }
+        }
+        System.out.println("--------partition points-----------");
+    }
+
+    public void printScalarMutliplications() {
+        System.out.println("--------scalar multiplication-----------");
+        for(int i = 0; i < this.scalarMultiplications.length; i++) {
+            for(int j= 0; j < this.scalarMultiplications.length; j++) {
+                System.out.println("this.scalarMultiplications["+i+"]["+j+"] " + this.scalarMultiplications[i][j] + ", ");
+            }
+        }
+        System.out.println("--------scalar multiplication-----------");
+    }
+
+    public void orderMatrix() {
 
         for(int i = 0; i <= n; i++) {
             scalarMultiplications[i][i] = 0;
+            System.out.println("scalarMultiplications["+i+"]["+i+"] = 0");
         }
 
         for(int l = 2; l <= n; l++) {
@@ -66,6 +86,7 @@ public class MatrixChainOrder {
                 int j = i + l - 1;
                 scalarMultiplications[i][j] = Integer.MAX_VALUE;
                 for (int k = i; k <= j - 1; k++) {
+                    System.out.println("scalarMultiplications["+i+"]["+k+"] + scalarMultiplications["+(k + 1)+"]["+j+"]");
                     int q = scalarMultiplications[i][k] + scalarMultiplications[k + 1][j] + getScalarMultiplicationsOfMatrices(i, k, j) ;
 
                     if (q < scalarMultiplications[i][j]) {
@@ -75,6 +96,7 @@ public class MatrixChainOrder {
                 }
             }
         }
+
     }
 
 
@@ -93,5 +115,8 @@ public class MatrixChainOrder {
         matrices.add(p4);
         matrices.add(p5);
         MatrixChainOrder mco = new MatrixChainOrder(matrices);
+        mco.orderMatrix();
+        mco.printPartitionPoint();
+        mco.printScalarMutliplications();
     }
 }
