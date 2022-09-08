@@ -50,7 +50,7 @@ public class MatrixChainOrder {
     public void printPartitionPoint() {
         System.out.println("--------partition points-----------");
         for(int i = 0; i < this.partitionPoint.length; i++) {
-            for(int j= 0; j < this.partitionPoint.length; j++) {
+            for(int j = i; j < this.partitionPoint.length; j++) {
                 System.out.print(this.partitionPoint[i][j] + ", ");
             }
         }
@@ -60,7 +60,7 @@ public class MatrixChainOrder {
     public void printScalarMutliplications() {
         System.out.println("--------scalar multiplication-----------");
         for(int i = 0; i < this.scalarMultiplications.length; i++) {
-            for(int j= 0; j < this.scalarMultiplications.length; j++) {
+            for(int j= i; j < this.scalarMultiplications.length; j++) {
                 System.out.println("this.scalarMultiplications["+i+"]["+j+"] " + this.scalarMultiplications[i][j] + ", ");
             }
         }

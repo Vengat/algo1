@@ -5,13 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5e6d309b-df0b-4506-8d34-c660197878b7" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tuts.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Tuts.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/vengat/tuts/algo/graph/Graph.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vengat/tuts/algo/graph/Graph.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/vengat/tuts/dynamic/programming/MatrixChainOrder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/vengat/tuts/dynamic/programming/MatrixChainOrder.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/vengat/tuts/AppTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/vengat/tuts/AppTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
